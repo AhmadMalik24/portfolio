@@ -1,20 +1,64 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Ahmad's Portfolio
 
-# Run and deploy your AI Studio app
+Welcome to my personal portfolio! This is a modern, interactive portfolio website showcasing my projects, skills, and experience.
 
-This contains everything you need to run your app locally.
+## 🌐 About This Portfolio
 
-View your app in AI Studio: https://ai.studio/apps/764e7546-62a4-454a-92cb-f438915d373f
+This is a full-stack React + TypeScript application built with:
+- **React 19** - UI framework
+- **Vite** - Fast build tool
+- **TailwindCSS** - Styling
+- **Three.js** - 3D graphics and animations
+- **React Three Fiber** - 3D integration with React
+- **i18n** - Multi-language support (English, Russian, Ukrainian, Urdu)
 
-## Run Locally
+## 📋 Features
 
-**Prerequisites:**  Node.js
+✨ **Interactive 3D Avatar** - Display your 3D model with animations
+🎨 **Responsive Design** - Works on desktop, tablet, and mobile
+🌍 **Multi-language Support** - Available in 4 languages
+📧 **Contact Form** - Easy way for visitors to get in touch
+🎓 **Certifications** - Showcase your technical certifications
+🎬 **Projects & Videos** - Display your work and demos
 
+## 🚀 Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+- Node.js (v18 or higher)
+
+### Installation & Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AhmadMalik24/portfolio.git
+   cd portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+   The app will be available at `http://localhost:3000`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The production-ready files will be in the `dist/` folder.
+
+## 📧 Contact
+
+- **Email:** ahmad.malik12340@gmail.com
+- **LinkedIn:** [Ahmad Malik](https://linkedin.com/in/ahmadmalik24)
+
+## 📄 License
+
+This project is personal portfolio. Feel free to use it as inspiration for your own!
