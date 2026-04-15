@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "home": "home",
+    "works": "works",
+    "aboutMe": "about-me",
+    "contacts": "contacts"
+  },
+  "hero": {
+    "title": "Software Engineer",
+    "subtitle": "Crafting scalable solutions where technology meets innovation.",
+    "cta": "Contact me!!",
+    "status": "Currently working on",
+    "project": "Portfolio"
+  },
+  "quote": {
+    "text": "Programming: turning coffee into code… and bugs into features.",
+    "author": "— Anonymous Developer"
+  },
+  "sections": {
+    "projects": "projects",
+    "skills": "skills",
+    "certifications": "certifications",
+    "aboutMe": "about-me",
+    "contacts": "contacts"
+  },
+  "common": {
+    "viewAll": "View all",
+    "readMore": "Read more"
+  },
+  "about": {
+    "intro": "Hello, I'm Ahmad Malik!",
+    "bio": "Hello, I'm Ahmad Malik!\\n\\nI'm a Software Engineer based in Lahore, Pakistan. I specialize in full-stack development using modern technologies like React, Node.js, and Django REST Framework.\\n\\nI focus on building scalable, efficient, and user-centric applications while continuously improving my skills and staying up to date with emerging technologies.",
+    "os": "OS: Ahmad_OS v1.0.4",
+    "role": "ROLE: Full-Stack Developer",
+    "location": "LOC: Lahore, Pakistan",
+    "whoAmI": "Who am I?",
+    "funFacts": "my-fun-facts"
+  },
+  "contact": {
+    "message": "I'm open to freelance opportunities and collaborations. If you have a project in mind or any questions, feel free to reach out—I'd be happy to connect.",
+    "messageMeHere": "Message me here",
+    "status": "System Status",
+    "statusReady": "Ready for transmission",
+    "allMedia": "all-media"
+  },
+  "footer": {
+    "copyright": "© Copyright 2024. Made by Ahmad Malik",
+    "title": "Software Engineer | Full-Stack Developer"
+  }
+}

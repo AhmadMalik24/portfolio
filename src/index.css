@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-bg: #282c33;
+  --color-accent: #c778dd;
+  --color-grey: #abb2bf;
+  --color-white: #ffffff;
+  --color-border: #abb2bf;
+  --color-terminal-green: #98c379;
+  --color-terminal-cyan: #56b6c2;
+  --color-terminal-bg: #1e2127;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 5px currentColor; }
+  50% { text-shadow: 0 0 15px currentColor; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(1000%); }
+}
+
+.animate-scan {
+  animation: scan 3s linear infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.hover-glitch:hover span {
+  animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-grey font-mono selection:bg-accent/30 selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-medium;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply border border-accent px-4 py-2 text-white hover:bg-accent/10 transition-colors inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply border border-grey px-4 py-2 text-grey hover:bg-grey/10 transition-colors inline-flex items-center gap-2;
+  }
+
+  .section-title {
+    @apply text-3xl font-medium flex items-center gap-4;
+  }
+
+  .section-title span {
+    @apply text-accent;
+  }
+
+  .section-title::after {
+    @apply content-[''] h-[1px] bg-accent flex-grow;
+  }
+}
