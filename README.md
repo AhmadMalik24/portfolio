@@ -5,6 +5,7 @@ Welcome to my personal portfolio! This is a modern, interactive portfolio websit
 ## 🌐 About This Portfolio
 
 This is a full-stack React + TypeScript application built with:
+
 - **React 19** - UI framework
 - **Vite** - Fast build tool
 - **TailwindCSS** - Styling
@@ -24,22 +25,26 @@ This is a full-stack React + TypeScript application built with:
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 
 ### Installation & Development
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/AhmadMalik24/portfolio.git
    cd portfolio
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    ```
