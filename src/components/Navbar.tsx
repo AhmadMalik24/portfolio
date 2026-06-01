@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
@@ -7,13 +7,46 @@ import { useTranslation } from 'react-i18next';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [isNavVisible, setIsNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
   const { i18n, t } = useTranslation();
 
+  // Handle navbar visibility on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Show navbar when scrolling up or at top
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        setIsNavVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Hide navbar when scrolling down
+        setIsNavVisible(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  // Scroll to top handler
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (location.pathname !== '/') {
+      // If not on home page, let the router handle it
+      return;
+    }
+    // If on home page, scroll to top
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navLinks = [
     { name: t('nav.home'), path: '/' },
-    { name: t('nav.works'), path: '/projects' },
     { name: t('nav.aboutMe'), path: '/about-me' },
+    { name: t('nav.projects'), path: '/projects' },
     { name: t('nav.contacts'), path: '/contacts' },
   ];
 
@@ -38,8 +71,14 @@ export default function Navbar() {
   const currentLang = languages.find(l => l.code === i18n.language)?.name || 'EN';
 
   return (
-    <nav className="sticky top-0 z-50 bg-bg/80 backdrop-blur-sm py-4 px-4 md:px-16 lg:px-32 flex justify-between items-center">
-      <Link to="/" className="flex items-center gap-2 text-white font-bold text-xl">
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-sm py-4 px-4 md:px-16 lg:px-32 flex justify-between items-center transition-transform duration-300 ${
+      isNavVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
+      <Link 
+        to="/" 
+        onClick={handleLogoClick}
+        className="flex items-center gap-2 text-white font-bold text-xl hover:text-accent transition-colors cursor-pointer"
+      >
         <div className="w-4 h-4 border-2 border-accent rotate-45"></div>
         Ahmad Malik
       </Link>

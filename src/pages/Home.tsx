@@ -116,11 +116,11 @@ export default function Home() {
           </div>
 
           <div className="flex-[2] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-fit">
-            <SkillBox title="Languages" skills="TypeScript Lua Python JavaScript" />
+            <SkillBox title="Languages" skills="TypeScript Lua Python JavaScript C C++ React Pandas Numpy Matplotlib" />
             <SkillBox title="Databases" skills="SQLite PostgreSQL Mongo" />
-            <SkillBox title="Tools" skills="VSCode Neovim Linux Figma XFCE Arch Git Font Awesome" />
-            <SkillBox title="Other" skills="HTML CSS EJS SCSS REST Jinja" />
-            <SkillBox title="Frameworks" skills="React Vue Disnake Discord.js Flask Express.js" />
+            <SkillBox title="Tools" skills="VSCode Neovim Linux Figma Git Jira Cursor" />
+            <SkillBox title="Other" skills="HTML CSS EJS REST TailwindCSS" />
+            <SkillBox title="Frameworks" skills="React Vue Flask Express.js Django Node.js QtCreator" />
           </div>
         </div>
       </section>
@@ -304,7 +304,6 @@ function SkillBox({ title, skills }: any) {
 
       <div className="p-2 border-b border-grey text-white font-medium flex justify-between items-center group-hover:border-accent transition-colors">
         <span>{title}</span>
-        <span className="text-[10px] text-grey group-hover:text-accent transition-colors">[READY]</span>
       </div>
       <div className="p-3 flex flex-wrap gap-2 relative z-10">
         {skillList.map((skill: string, i: number) => (
@@ -326,13 +325,20 @@ function SkillBox({ title, skills }: any) {
 }
 
 function CertificationCard({ title, org, year, icon, link, image }: any) {
+  const handleClick = () => {
+    if (link) {
+      window.open(link, '_blank');
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ y: -5, rotate: 1 }}
-      className="border border-grey p-4 flex flex-col gap-4 bg-bg hover:border-accent transition-all group"
+      onClick={handleClick}
+      className="border border-grey p-4 flex flex-col gap-4 bg-bg hover:border-accent transition-all group cursor-pointer"
     >
       {image && (
         <div className="w-full h-32 rounded overflow-hidden border border-grey/30">
@@ -356,12 +362,8 @@ function CertificationCard({ title, org, year, icon, link, image }: any) {
       </div>
       <div className="mt-auto flex justify-between items-center">
         <span className="text-grey text-xs">{year}</span>
-        {link ? (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="text-accent text-xs hover:underline">
-            View credentials
-          </a>
-        ) : (
-          <button className="text-accent text-xs hover:underline">View credentials</button>
+        {link && (
+          <span className="text-accent text-xs">View credentials</span>
         )}
       </div>
     </motion.div>

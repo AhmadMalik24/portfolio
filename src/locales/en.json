@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "home",
-    "works": "works",
     "aboutMe": "about-me",
+    "projects": "projects",
     "contacts": "contacts"
   },
   "hero": {
@@ -29,7 +29,7 @@
   },
   "about": {
     "intro": "Hello, I'm Ahmad Malik!",
-    "bio": "Hello, I'm Ahmad Malik!\\n\\nI'm a Software Engineer based in Lahore, Pakistan. I specialize in full-stack development using modern technologies like React, Node.js, and Django REST Framework.\\n\\nI focus on building scalable, efficient, and user-centric applications while continuously improving my skills and staying up to date with emerging technologies.",
+    "bio": "Hello, I'm Ahmad Malik! I'm a Software Engineer based in Lahore, Pakistan. I specialize in full-stack development using modern technologies like React, Node.js, and Django REST Framework. I focus on building scalable, efficient, and user-centric applications while continuously improving my skills and staying up to date with emerging technologies.",
     "os": "OS: Ahmad_OS v1.0.4",
     "role": "ROLE: Full-Stack Developer",
     "location": "LOC: Lahore, Pakistan",

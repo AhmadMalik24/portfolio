@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { User, MapPin, Calendar, Terminal as TerminalIcon, Cpu, Monitor, HardDrive } from 'lucide-react';
+import { User, MapPin, Calendar, Terminal as TerminalIcon, Cpu, Monitor, HardDrive, Laptop, Star, Tv, BikeIcon, Bike, UtensilsCrossed } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Dots from '../components/Dots';
 
@@ -133,11 +133,11 @@ export default function AboutMe() {
       <section>
         <h2 className="text-3xl font-medium mb-12 hover-glitch"><span>#</span>{t('sections.skills')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-          <SkillBox title="Languages" skills="TypeScript Lua Python JavaScript" />
-          <SkillBox title="Other" skills="HTML CSS EJS SCSS REST Jinja" />
-          <SkillBox title="Tools" skills="VSCode Neovim Linux Figma XFCE Arch Git Font Awesome KDE fish" />
+          <SkillBox title="Languages" skills="TypeScript Lua Python JavaScript C C++ React Pandas Numpy Matplotlib" />
+          <SkillBox title="Other" skills="HTML CSS EJS REST TailwindCSS" />
+          <SkillBox title="Tools" skills="VSCode Neovim Linux Figma Git Jira Cursor" />
           <SkillBox title="Databases" skills="SQLite PostgreSQL Mongo" />
-          <SkillBox title="Frameworks" skills="React Vue Disnake Discord.js Flask Express.js" />
+          <SkillBox title="Frameworks" skills="React Vue Flask Express.js Django Node.js QtCreator" />
         </div>
       </section>
 
@@ -146,12 +146,12 @@ export default function AboutMe() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="flex flex-wrap gap-4 col-span-2 h-fit">
             <FunFact icon={<Calendar size={14} />}>I like winter more than summer</FunFact>
-            <FunFact icon={<TerminalIcon size={14} />}>I often bike with my friends</FunFact>
-            <FunFact icon={<TerminalIcon size={14} />}>I like pizza and pasta</FunFact>
-            <FunFact icon={<MapPin size={14} />}>I was in Egypt, Poland and Turkey</FunFact>
-            <FunFact icon={<Monitor size={14} />}>My favorite movie is The Green Mile</FunFact>
-            <FunFact icon={<HardDrive size={14} />}>I am still in school</FunFact>
-            <FunFact icon={<User size={14} />}>I don’t have any siblings</FunFact>
+            <FunFact icon={<Bike size={14} />}>I often bike with my friends</FunFact>
+            <FunFact icon={<UtensilsCrossed size={14} />}>I like pizza and pasta</FunFact>
+            <FunFact icon={<Laptop size={14} />}>I like gaming and can play for up to 10 hours</FunFact>
+            <FunFact icon={<Monitor size={14} />}>My favorite movie is Inception</FunFact>
+            <FunFact icon={<Star size={14} />}>My star sign is Leo</FunFact>
+            <FunFact icon={<Tv size={14} />}>I’ve been watching anime since 6th grade</FunFact>
           </div>
           <div className="hidden lg:flex justify-center items-center relative">
             <div className="w-32 h-32 border border-grey rotate-45 absolute opacity-20"></div>
@@ -182,7 +182,6 @@ function SkillBox({ title, skills }: any) {
 
       <div className="p-2 border-b border-grey text-white font-medium flex justify-between items-center group-hover:border-accent transition-colors">
         <span>{title}</span>
-        <span className="text-[10px] text-grey group-hover:text-accent transition-colors">[READY]</span>
       </div>
       <div className="p-3 flex flex-wrap gap-2 relative z-10">
         {skillList.map((skill: string, i: number) => (

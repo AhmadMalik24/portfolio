@@ -16,7 +16,7 @@ export default function App() {
         <SocialSidebar />
         <Navbar />
         
-        <main className="flex-grow px-4 md:px-16 lg:px-32 max-w-7xl mx-auto w-full">
+        <main className="flex-grow px-4 md:px-16 lg:px-32 max-w-7xl mx-auto w-full pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
