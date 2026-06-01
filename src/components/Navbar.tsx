@@ -8,6 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [isNavVisible, setIsNavVisible] = useState(true);
+  const [showLogo, setShowLogo] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
   const { i18n, t } = useTranslation();
@@ -25,12 +26,19 @@ export default function Navbar() {
         setIsNavVisible(false);
       }
       
+      // Show logo only when scrolled down (on home page)
+      if (location.pathname === '/') {
+        setShowLogo(currentScrollY > 100);
+      } else {
+        setShowLogo(true);
+      }
+      
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, location.pathname]);
 
   // Scroll to top handler
   const handleLogoClick = (e: React.MouseEvent) => {
@@ -74,14 +82,25 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-sm py-4 px-4 md:px-16 lg:px-32 flex justify-between items-center transition-transform duration-300 ${
       isNavVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
-      <Link 
-        to="/" 
-        onClick={handleLogoClick}
-        className="flex items-center gap-2 text-white font-bold text-xl hover:text-accent transition-colors cursor-pointer"
-      >
-        <div className="w-4 h-4 border-2 border-accent rotate-45"></div>
-        Ahmad Malik
-      </Link>
+      {showLogo ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Link 
+            to="/" 
+            onClick={handleLogoClick}
+            className="flex items-center gap-2 text-white font-bold text-xl hover:text-accent transition-colors cursor-pointer"
+          >
+            <div className="w-4 h-4 border-2 border-accent rotate-45"></div>
+            Ahmad Malik
+          </Link>
+        </motion.div>
+      ) : (
+        <div className="w-12"></div>
+      )}
 
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-8">
